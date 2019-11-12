@@ -1,0 +1,19 @@
+buildscript {
+
+repositories {
+    if (project.hasProperty('local')) {
+        mavenLocal()
+    }
+    mavenCentral()
+}
+
+    dependencies {
+        classpath 'org.ow2.proactive:gradle-plugin-example:1.0.0-SNAPSHOT' //for using the plugin in local maven
+    }
+}
+
+apply plugin: org.ow2.proactive.gradle.GradlePluginExample
+
+example {
+    sentenceToDisplay="Here is the sentence to display"
+}
